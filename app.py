@@ -22,7 +22,7 @@ class Database:
         return self.cur.fetchall()
 
     def list_genre(self):
-        self.cur.execute("select genre_name from all_data where genre_name is not null;")
+        self.cur.execute("select distinct genre_name from all_data where genre_name is not null;")
         result = self.cur.fetchall()
         return result
 
